@@ -110,15 +110,15 @@ class AutoEncoder(pl.LightningModule):
         self.log("val_loss", avg_loss, sync_dist=True)
         self.val_loss.clear()
 
-    def _test_plot(self, noisy: torch.Tensor, denoised: torch.Tensor, idx: int,
-                   loss: float):
+    def _test_plot(self, noisy: torch.Tensor, denoised: torch.Tensor,
+                   idx: int):
         noisy = noisy.cpu().numpy()
         denoised = denoised.cpu().numpy()
         plt.figure(figsize=(8, 4))
         plt.subplot(1, 2, 1)
         plt.plot(noisy[idx, :], label='Noisy')
         plt.plot(denoised[idx, :], label='Denoised')
-        plt.legend(loc='upper right')
+        plt.legend()
         plt.xlim([0, self.width-1])
         plt.ylabel('Normalized amplitude')
         plt.xlabel('index')
@@ -127,9 +127,9 @@ class AutoEncoder(pl.LightningModule):
         plt.legend()
         plt.xlim([0, self.width-1])
         plt.xlabel('index')
-        plt.suptitle(f'Loss: {loss:.7f}')
         plt.savefig(f"reports/figures/"
-                    f"{self.width}_{self.latent_dim}_{idx}.png", dpi=200)
+                    f"{self.width}_{self.latent_dim}_{idx}.png",
+                    bbox_inches='tight', dpi=200)
         plt.close()
 
     def test_step(self, batch):
@@ -137,7 +137,7 @@ class AutoEncoder(pl.LightningModule):
         loss = self._get_reconstruction_loss(batch)
         self.log("test_loss", loss)
         for idx in range(10):
-            self._test_plot(batch, x_hat, idx, loss)
+            self._test_plot(batch, x_hat, idx)
 
 
 class GetData():
