@@ -16,12 +16,12 @@ parser.add_argument("--data", help="'real' or 'fake' data, default: 'real'",
                     default='real', type=str)
 parser.add_argument("--width",
                     help="first/last layer size for encoder/decoder",
-                    default=128, type=int)
+                    default=64, type=int)
 parser.add_argument("--dim", help="latent dimension size for the autoencoder",
                     default=5, type=int)
 parser.add_argument("--lr", help="learning rate", default=1e-3, type=float)
 parser.add_argument("--epochs", help="no of epochs to train the network",
-                    default=2, type=int)
+                    default=100, type=int)
 args = parser.parse_args()
 
 
