@@ -1,7 +1,7 @@
 henry
 ==============================
 
-Gravitational-wave noise modelling with autoencoders. This particular model removes low frequency blips. With a few minor changes the model can be adapted to remove other short-duration noise transients in gravitational-wave data, e.g. Tomte glitches.
+Gravitational-wave noise modeling with autoencoders. This particular model removes low-frequency blips. The model can be adapted with a few minor changes to remove other short-duration noise transients in gravitational-wave data, e.g., Tomte glitches.
 
 For more details about gravitational-wave noise, read for example [arXiv:1602.03844](https://arxiv.org/abs/1602.03844) and [arXiv:1611.04596](https://arxiv.org/abs/1611.04596).
 
