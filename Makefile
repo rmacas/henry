@@ -25,20 +25,16 @@ requirements: test_environment
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 
-## Make Dataset
-data: requirements
-	$(PYTHON_INTERPRETER) src/data/make_dataset.py data/raw data/processed
-
 ## Train the network
 train:
 	$(PYTHON_INTERPRETER) src/models/train_model.py
 
 ## Test the network
 test:
-	$(PYTHON_INTERPRETER) src/models/predict_model.py
+	$(PYTHON_INTERPRETER) src/models/test_model.py
 
 
-## Delete all compiled Python files
+## Delete all compiled Python and PyTorch files
 clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
