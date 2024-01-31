@@ -1,16 +1,15 @@
 henry
 ==============================
 
-Gravitational-wave noise modelling with autoencoders
+Gravitational-wave noise modelling with autoencoders. This particular model removes low frequency blips. With a few minor changes the model can be adapted to remove other short-duration noise transients in gravitational-wave data, e.g. Tomte glitches.
 
-<!-- Machine learning algorithm to remove non-linear noise in gravitational-wave data around GW200129. Full reproduction requires access to LIGO internal data and a GPU with about 30GB memory. Production-quality model training takes about 30 minutes on Nvidia A100 80GB. -->
+For more details about gravitational-wave noise, read for example [arXiv:1602.03844](https://arxiv.org/abs/1602.03844) and [arXiv:1611.04596](https://arxiv.org/abs/1611.04596).
 
-<!-- For more details about gravitational-wave noise, read for example [arXiv:2311.09921](https://arxiv.org/abs/2311.09921). --> 
+The model training takes less than 5 minutes on Nvidia A100 and requires less than 8GB of memory.
 
 ![Image Alt text](/reports/figures/64_5_7.png)
 
 Examples of the cleaned data are in the `reports/figures` folder.
-
 
 Installation:
 --------
@@ -18,8 +17,8 @@ Installation:
 2) Install Python packages with `make requirements`
 3) Install the `henry` package with `pip install .`
 
+Makefile commands
 --------
-Makefile commands:
 - `create_environment` - Set up Python interpreter environment.
 - `requirements` - Set up Python dependencies.
 - `test_environment` - Test Python environment setup.
@@ -31,4 +30,3 @@ Makefile commands:
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
-
