@@ -11,7 +11,7 @@ The model training takes less than 5 minutes on Nvidia A100 and requires less th
 
 Examples of the cleaned data are in the `reports/figures` folder.
 
-Installation:
+Installation
 --------
 1) Create a Conda environment with `make create_environment`
 2) Install Python packages with `make requirements`
