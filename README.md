@@ -15,7 +15,7 @@ Installation
 --------
 1) Create a Conda environment with `make create_environment`
 2) Install Python packages with `make requirements`
-3) Install the `henry` package with `pip install .`
+3) Install `henry` with `pip install .`
 
 Makefile commands
 --------
